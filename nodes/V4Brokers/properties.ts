@@ -6,6 +6,7 @@ export const operationProperty: INodeProperties = {
 	displayName: 'Operation',
 	name: 'operation',
 	type: 'options',
+	default: 'createLead',
 	noDataExpression: true,
 	options: [
 		{
@@ -27,7 +28,6 @@ export const operationProperty: INodeProperties = {
 			action: 'Relist a lead',
 		},
 	],
-	default: V4BrokersOperation.CreateLead,
 };
 
 export const createLeadProperties: INodeProperties[] = [
