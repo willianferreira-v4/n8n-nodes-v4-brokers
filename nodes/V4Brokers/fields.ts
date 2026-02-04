@@ -5,7 +5,7 @@ export interface FieldDefinition {
 	type: 'string' | 'number';
 	default?: string | number;
 	placeholder?: string;
-	credentialField: string;
+	fieldIdKey: string; // Key in the fieldIds JSON object
 }
 
 export const LEAD_FIELDS: FieldDefinition[] = [
@@ -14,84 +14,84 @@ export const LEAD_FIELDS: FieldDefinition[] = [
 		name: 'nomeEmpresa',
 		type: 'string',
 		default: '',
-		credentialField: 'fieldIdNomeEmpresa',
+		fieldIdKey: 'nomeEmpresa',
 	},
 	{
 		displayName: 'Nome Do Responsável',
 		name: 'nomeResponsavel',
 		type: 'string',
 		default: '',
-		credentialField: 'fieldIdNomeResponsavel',
+		fieldIdKey: 'nomeResponsavel',
 	},
 	{
 		displayName: 'Documento Da Empresa',
 		name: 'documentoEmpresa',
 		type: 'string',
 		default: '',
-		credentialField: 'fieldIdDocumentoEmpresa',
+		fieldIdKey: 'documentoEmpresa',
 	},
 	{
 		displayName: 'Faturamento Real',
 		name: 'faturamentoReal',
 		type: 'string',
 		default: '',
-		credentialField: 'fieldIdFaturamentoReal',
+		fieldIdKey: 'faturamentoReal',
 	},
 	{
 		displayName: 'Faturamento',
 		name: 'faturamento',
 		type: 'string',
 		default: '',
-		credentialField: 'fieldIdFaturamento',
+		fieldIdKey: 'faturamento',
 	},
 	{
 		displayName: 'Canal',
 		name: 'canal',
 		type: 'string',
 		default: '',
-		credentialField: 'fieldIdCanal',
+		fieldIdKey: 'canal',
 	},
 	{
 		displayName: 'Segmento',
 		name: 'segmento',
 		type: 'string',
 		default: '',
-		credentialField: 'fieldIdSegmento',
+		fieldIdKey: 'segmento',
 	},
 	{
 		displayName: 'Cidade',
 		name: 'cidade',
 		type: 'string',
 		default: '',
-		credentialField: 'fieldIdCidade',
+		fieldIdKey: 'cidade',
 	},
 	{
 		displayName: 'ZIP Code',
 		name: 'zipCode',
 		type: 'string',
 		default: '',
-		credentialField: 'fieldIdZipCode',
+		fieldIdKey: 'zipCode',
 	},
 	{
 		displayName: 'Estado',
 		name: 'estado',
 		type: 'string',
 		default: '',
-		credentialField: 'fieldIdEstado',
+		fieldIdKey: 'estado',
 	},
 	{
 		displayName: 'País',
 		name: 'pais',
 		type: 'string',
 		default: '',
-		credentialField: 'fieldIdPais',
+		fieldIdKey: 'pais',
 	},
 	{
 		displayName: 'Tipo De Produto',
 		name: 'tipoProduto',
 		type: 'string',
 		default: '',
-		credentialField: 'fieldIdTipoProduto',
+		fieldIdKey: 'tipoProduto',
 	},
 	{
 		displayName: 'E-Mail',
@@ -99,55 +99,92 @@ export const LEAD_FIELDS: FieldDefinition[] = [
 		type: 'string',
 		placeholder: 'name@email.com',
 		default: '',
-		credentialField: 'fieldIdEmail',
+		fieldIdKey: 'email',
 	},
 	{
 		displayName: 'Telefone',
 		name: 'telefone',
 		type: 'string',
 		default: '',
-		credentialField: 'fieldIdTelefone',
+		fieldIdKey: 'telefone',
 	},
 	{
 		displayName: 'Nível De Urgência',
 		name: 'nivelUrgencia',
 		type: 'string',
 		default: '',
-		credentialField: 'fieldIdNivelUrgencia',
+		fieldIdKey: 'nivelUrgencia',
 	},
 	{
 		displayName: 'Cargo',
 		name: 'cargo',
 		type: 'string',
 		default: '',
-		credentialField: 'fieldIdCargo',
+		fieldIdKey: 'cargo',
 	},
 	{
 		displayName: 'Descrição',
 		name: 'descricao',
 		type: 'string',
 		default: '',
-		credentialField: 'fieldIdDescricao',
+		fieldIdKey: 'descricao',
 	},
 	{
 		displayName: 'Latitude',
 		name: 'latitude',
 		type: 'string',
 		default: '',
-		credentialField: 'fieldIdLatitude',
+		fieldIdKey: 'latitude',
 	},
 	{
 		displayName: 'Longitude',
 		name: 'longitude',
 		type: 'string',
 		default: '',
-		credentialField: 'fieldIdLongitude',
+		fieldIdKey: 'longitude',
 	},
 	{
 		displayName: 'Data De Cadastro',
 		name: 'dataCadastro',
 		type: 'string',
 		default: '',
-		credentialField: 'fieldIdDataCadastro',
+		fieldIdKey: 'dataCadastro',
 	},
 ];
+
+// Helper type for the fieldIds JSON structure
+export interface FieldIdsConfig {
+	nomeEmpresa?: string;
+	nomeResponsavel?: string;
+	documentoEmpresa?: string;
+	faturamentoReal?: string;
+	faturamento?: string;
+	canal?: string;
+	segmento?: string;
+	cidade?: string;
+	zipCode?: string;
+	estado?: string;
+	pais?: string;
+	tipoProduto?: string;
+	email?: string;
+	telefone?: string;
+	nivelUrgencia?: string;
+	cargo?: string;
+	descricao?: string;
+	latitude?: string;
+	longitude?: string;
+	dataCadastro?: string;
+}
+
+// Full config structure from credentials
+export interface V4BrokersConfig {
+	baseUrl: string;
+	clientId: string;
+	clientSecret: string;
+	categoryId: string;
+	segmentId: string;
+	campaignId: string;
+	createdBy: string;
+	tenantBrandId: string;
+	fieldIds: FieldIdsConfig;
+}
