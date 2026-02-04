@@ -1,6 +1,6 @@
 {
 	"name": "n8n-nodes-v4-brokers",
-	"version": "1.0.1",
+	"version": "1.0.2",
 	"description": "n8n node for V4 Brokers API integration",
 	"license": "MIT",
 	"homepage": "",
