@@ -8,8 +8,8 @@ import { handleError } from './errorHandler';
 export class V4Brokers implements INodeType {
 	description = {
 		...nodeDescription,
-		icon: 'file:icon-leadbroker.svg',
-		usableAsTool: true,
+		icon: 'file:icon-leadbroker.svg' as const,
+		usableAsTool: true as const,
 	};
 
 	async execute(this: IExecuteFunctions): Promise<INodeExecutionData[][]> {

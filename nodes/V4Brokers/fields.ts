@@ -3,6 +3,8 @@ export interface FieldDefinition {
 	displayName: string;
 	name: string;
 	type: 'string' | 'number';
+	default?: string | number;
+	placeholder?: string;
 	credentialField: string;
 }
 

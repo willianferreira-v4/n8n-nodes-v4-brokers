@@ -1,4 +1,4 @@
-import type { INode } from 'n8n-workflow';
+import type { INode, JsonObject } from 'n8n-workflow';
 import { NodeOperationError, NodeApiError } from 'n8n-workflow';
 
 interface ErrorDetails {
@@ -124,7 +124,7 @@ export function handleError(error: unknown, node: INode, itemIndex: number): nev
 
 	// Throw appropriate error type
 	if (err?.response) {
-		throw new NodeApiError(node, error as Error, {
+		throw new NodeApiError(node, { message: errorMessage } as unknown as JsonObject, {
 			message: fullMessage,
 			itemIndex,
 		});

@@ -6,12 +6,12 @@
 	"resources": {
 		"credentialDocumentation": [
 			{
-				"url": "https://api.brokers.mktlab.app/docs"
+				"url": ""
 			}
 		],
 		"primaryDocumentation": [
 			{
-				"url": "https://github.com/v4company/n8n-nodes-v4-brokers"
+				"url": "https://github.com/willianferreira-v4/n8n-nodes-v4-brokers"
 			}
 		]
 	}

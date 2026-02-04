@@ -5,7 +5,11 @@
 	"license": "MIT",
 	"homepage": "",
 	"keywords": [
-		"n8n-community-node-package"
+		"n8n-community-node-package",
+		"n8n",
+		"v4-brokers",
+		"v4company",
+		"lead-broker"
 	],
 	"author": {
 		"name": "Willian Silva Ferreira",

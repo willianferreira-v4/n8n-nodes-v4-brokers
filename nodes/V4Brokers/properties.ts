@@ -6,7 +6,6 @@ export const operationProperty: INodeProperties = {
 	displayName: 'Operation',
 	name: 'operation',
 	type: 'options',
-	default: '',
 	noDataExpression: true,
 	options: [
 		{
